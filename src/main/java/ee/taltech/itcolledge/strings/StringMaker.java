@@ -8,15 +8,24 @@ public class StringMaker {
      * @param x how many times you want the string
      */
     public static String make(String s, int x) {
-        String chars = "";
-        return chars;
+        String result = "";
+        for (int i = 0; i < x; i++) {
+            result = result + s;
+        }
+        return result;
     }
 
     /**
      * Gives you a text containing of x times of string c plus y times of string c.
      */
     public static String make(String s1, int x1, String s2, int x2) {
-        String chars = "";
-        return chars;
+        String result = "";
+        for (int i = 0; i < x1; i++) {
+            result += s1;
+        }
+        for (int i = 0; i < x2; i++) {
+            result += s2;
+        }
+        return result;
     }
 }
