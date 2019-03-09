@@ -15,6 +15,18 @@ public class Address {
         this.flat = flat;
     }
 
+    public String streetHouseFlat(){
+        return String.format("%s %s-%s", street, house, flat);
+    }
+
+    public String streetHouse(){
+        return String.format("%s %s", street, house);
+    }
+
+    public String street(){
+        return String.format("%s", street);
+    }
+
     public String getStreet() {
         return street;
     }

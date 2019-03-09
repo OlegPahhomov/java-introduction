@@ -41,7 +41,7 @@ public class AddressGrouperTest {
     public void people_living_in_the_same_street() {
         Map<String, List<Person>> sameStreet = AddressGrouper.getPeopleLivingInTheSameStreet(people);
         assertEquals(2, sameStreet.size());
-        List<Person> people = sameStreet.get("Sesame street 2");
+        List<Person> people = sameStreet.get("Sesame street");
         assertEquals(4, people.size());
     }
 }

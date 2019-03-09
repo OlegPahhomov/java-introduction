@@ -6,9 +6,9 @@ import org.junit.Test;
 import java.util.List;
 import java.util.Map;
 import java.util.NavigableMap;
-import java.util.SortedMap;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class PersonGrouperTest {
 
@@ -50,10 +50,10 @@ public class PersonGrouperTest {
         NavigableMap<String, Person> map = PersonGrouper.groupPeopleByFirstAndLastNameAsc(testPeople);
         assertEquals(3, map.size());
         Map.Entry<String, Person> firstEntry = map.firstEntry();
-        assertEquals("Donald Duck", firstEntry.getKey());
-        assertEquals("Donald", firstEntry.getValue().getFirstName());
+        assertEquals("Cristiano Ronaldo", firstEntry.getKey());
+        assertEquals("Cristiano", firstEntry.getValue().getFirstName());
         Map.Entry<String, Person> lastEntry = map.lastEntry();
-        assertEquals("Cristiano Ronaldo", lastEntry.getKey());
-        assertEquals("Cristiano", lastEntry.getValue().getFirstName());
+        assertEquals("Great President", lastEntry.getKey());
+        assertEquals("Great", lastEntry.getValue().getFirstName());
     }
 }
