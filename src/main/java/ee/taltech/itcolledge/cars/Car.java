@@ -1,10 +1,5 @@
 package ee.taltech.itcolledge.cars;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 public class Car {
 
     private String model;
@@ -12,4 +7,38 @@ public class Car {
     private Double userRating;
     private Integer cost;
 
+    public Car() {
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public boolean isElectric() {
+        return electric;
+    }
+
+    public void setElectric(boolean electric) {
+        this.electric = electric;
+    }
+
+    public Double getUserRating() {
+        return userRating;
+    }
+
+    public void setUserRating(Double userRating) {
+        this.userRating = userRating;
+    }
+
+    public Integer getCost() {
+        return cost;
+    }
+
+    public void setCost(Integer cost) {
+        this.cost = cost;
+    }
 }
