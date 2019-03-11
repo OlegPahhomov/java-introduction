@@ -29,4 +29,12 @@ public class Word {
     public void setWordType(WordType wordType) {
         this.wordType = wordType;
     }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "word='" + word + '\'' +
+                ", wordType=" + wordType +
+                '}';
+    }
 }

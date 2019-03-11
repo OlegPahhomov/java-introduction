@@ -2,6 +2,7 @@ package ee.taltech.itcolledge.cars;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class CarPicker {
@@ -22,15 +23,27 @@ public class CarPicker {
         //todo 3.2 Ask user how much money do they have and pick them a car or cars based on cars you have in garage
         // uncomment following lines for reading input example
         Scanner scanner = new Scanner(System.in);
-        //System.out.println("How much money do you have?");
-        //String input = scanner.nextLine();
-        //System.out.println("Your input: " + input);
+        System.out.println("How much money do you have?");
+        String input = scanner.nextLine();
+        System.out.println("Your input: " + input);
+        int money = Integer.parseInt(input);
 
+        System.out.println("What rating do you want? 0-10");
+        String input2 = scanner.nextLine();
+        System.out.println("Your input: " + input2);
+        int rating = Integer.parseInt(input2);
 
-        Car car = garage.get(0);
+        Optional<Car> recommendedCar = garage.stream()
+                .filter(car -> car.getCost() <= money)
+                .filter(car -> car.getUserRating() >= rating)
+                .findFirst();
 
         System.out.println("\n");
-        System.out.println("Shop recommends you: " + car);
+        if (recommendedCar.isPresent()) {
+            System.out.println("Shop recommends you: " + recommendedCar.get());
+        } else {
+            System.out.println("No car for you");
+        }
 
         //todo ADVANCED
         // ask user 2nd question (+rating)
